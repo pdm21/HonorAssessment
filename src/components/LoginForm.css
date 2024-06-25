@@ -115,3 +115,9 @@ html {
   background-color: transparent; /* Set the background to be transparent */
   box-shadow: none; /* Remove shadow */
 }
+.login-page
+  .col-md-6.d-flex.align-items-center.justify-content-center.login-image-container {
+  align-items: flex-start; /* Adjust this value to move the image up or down */
+  /* padding-top: 200px; Optional: fine-tune the positioning */
+  margin-top: -60px;
+}
