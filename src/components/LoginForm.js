@@ -37,7 +37,6 @@ const LoginForm = () => {
       if (data.data && data.data.accessToken) {
         localStorage.setItem("accessToken", data.data.accessToken);
         console.log("Token stored:", data.data.accessToken);
-        // alert("Login successful!");
         navigate("/sessions"); // Redirect to the sessions page
       } else {
         console.log("No token found in response:", data);
