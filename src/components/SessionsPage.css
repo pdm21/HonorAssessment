@@ -62,7 +62,8 @@
 }
 
 .table-bordered {
-  border: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  /* border-top: 0px; */
 }
 
 .table-bordered th,
@@ -107,4 +108,23 @@
 .bottom-cont-sessions {
   width: 75%;
   margin: auto;
+}
+
+.header-row {
+  border: 0;
+}
+
+.header-row th {
+  border: 0;
+  color: lightgrey;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.table .table-bordered {
+  border-top: 0;
+}
+
+.text-decoration-none {
+  color: darkgreen;
 }

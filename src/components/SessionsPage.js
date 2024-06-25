@@ -85,7 +85,11 @@ const SessionsPage = () => {
         <div className="top-cont-sessions col-12">
           <div className="card mb-4">
             <div className="card-body">
-              <h2 className="card-title">Past Sessions</h2>
+              <h2 className="past-sessions-title card-title">
+                <a href="#" className="text-decoration-none">
+                  Past Sessions
+                </a>
+              </h2>
             </div>
           </div>
         </div>
@@ -96,7 +100,7 @@ const SessionsPage = () => {
               {sessions.length > 0 ? (
                 <table className="table table-bordered">
                   <thead>
-                    <tr>
+                    <tr className="header-row">
                       <th>Client</th>
                       <th>Date & Time</th>
                       <th>Duration (mins)</th>
