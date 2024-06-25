@@ -1,5 +1,3 @@
-/* src/components/LoginForm.css */
-
 body,
 html {
   overflow: hidden; /* Prevent scrolling */
@@ -9,6 +7,9 @@ html {
   max-width: 400px;
   width: 100%;
   border-radius: 8px;
+  background-color: transparent; /* Set the background to be transparent */
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove shadow */
 }
 
 .login-page .sign-in-text {
@@ -72,7 +73,7 @@ html {
 .login-page .left-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Push footer to the bottom */
+  justify-content: center; /* Center the container vertically */
   height: 100vh; /* Full height to avoid overflow */
   padding: 2rem; /* Add some padding */
 }
@@ -106,4 +107,11 @@ html {
 
 .login-page .btn-primary {
   margin-top: 1rem; /* Add margin to the top to create spacing */
+}
+
+.sign-in-container {
+  margin-top: 0;
+  border: 0;
+  background-color: transparent; /* Set the background to be transparent */
+  box-shadow: none; /* Remove shadow */
 }
