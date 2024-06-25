@@ -7,19 +7,7 @@ const SessionsPage = () => {
   const [sessions, setSessions] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedSessionId, setSelectedSessionId] = useState(null);
-  const [muscleGroups, setMuscleGroups] = useState([]);
-  const [allMuscleGroups, setAllMuscleGroups] = useState([
-    "Back",
-    "Biceps",
-    "Chest",
-    "Core",
-    "Shoulders",
-    "Triceps",
-    "Quads",
-    "Hamstrings",
-    "Glutes",
-    "Calves",
-  ]);
+  const [selectedMuscleGroups, setSelectedMuscleGroups] = useState([]);
 
   useEffect(() => {
     const fetchSessions = async () => {
@@ -95,34 +83,36 @@ const SessionsPage = () => {
     }
   };
 
-  const handleEditMuscleGroups = (sessionId, currentMuscleGroups) => {
+  const handleEditMuscleGroups = (sessionId, muscleGroups) => {
     setSelectedSessionId(sessionId);
-    setMuscleGroups(
-      currentMuscleGroups ? currentMuscleGroups.map((m) => m.name) : []
+    setSelectedMuscleGroups(
+      muscleGroups ? muscleGroups.map((group) => group.title) : []
     );
     setShowModal(true);
   };
 
-  const handleSaveMuscleGroups = () => {
-    setSessions((prevSessions) =>
-      prevSessions.map((session) =>
-        session.id === selectedSessionId
-          ? {
-              ...session,
-              muscleGroups: muscleGroups.map((muscle) => ({ name: muscle })),
-            }
-          : session
-      )
+  const handleToggleMuscleGroup = (muscle) => {
+    setSelectedMuscleGroups((prev) =>
+      prev.includes(muscle)
+        ? prev.filter((group) => group !== muscle)
+        : [...prev, muscle]
     );
-    setShowModal(false);
   };
 
-  const handleToggleMuscleGroup = (muscle) => {
-    setMuscleGroups((prevMuscleGroups) =>
-      prevMuscleGroups.includes(muscle)
-        ? prevMuscleGroups.filter((m) => m !== muscle)
-        : [...prevMuscleGroups, muscle]
+  const handleSaveMuscleGroups = () => {
+    const updatedSessions = sessions.map((session) =>
+      session.id === selectedSessionId
+        ? {
+            ...session,
+            muscleGroups: selectedMuscleGroups.map((title) => ({
+              title,
+              id: title,
+            })),
+          }
+        : session
     );
+    setSessions(updatedSessions);
+    setShowModal(false);
   };
 
   return (
@@ -174,21 +164,19 @@ const SessionsPage = () => {
                           </span>
                         </td>
                         <td>
-                          <div className="d-flex align-items-center">
-                            <div className="muscle-groups">
-                              {session.muscleGroups &&
-                                session.muscleGroups.map((muscle, index) => (
+                          <div className="muscle-groups">
+                            {session.muscleGroups
+                              ? session.muscleGroups.map((muscle) => (
                                   <span
-                                    key={index}
-                                    className="badge badge-primary me-1"
+                                    key={muscle.title}
+                                    className="muscle-group-badge"
                                   >
-                                    {muscle.name}
+                                    {muscle.title}
                                   </span>
-                                ))}
-                            </div>
-                            <Button
-                              variant="link"
-                              className="p-0 ms-auto edit-button"
+                                ))
+                              : "N/A"}
+                            <span
+                              className="edit-button"
                               onClick={() =>
                                 handleEditMuscleGroups(
                                   session.id,
@@ -197,7 +185,7 @@ const SessionsPage = () => {
                               }
                             >
                               <i className="fas fa-edit"></i>
-                            </Button>
+                            </span>
                           </div>
                         </td>
                       </tr>
@@ -233,17 +221,31 @@ const SessionsPage = () => {
           <Modal.Title>Edit Muscle Groups</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {allMuscleGroups.map((muscle) => (
-            <Button
-              key={muscle}
-              variant={
-                muscleGroups.includes(muscle) ? "primary" : "outline-primary"
-              }
-              className="me-1 mb-1"
-              onClick={() => handleToggleMuscleGroup(muscle)}
-            >
-              {muscle}
-            </Button>
+          {[
+            "Back",
+            "Biceps",
+            "Chest",
+            "Core",
+            "Shoulders",
+            "Triceps",
+            "Quads",
+            "Hamstrings",
+            "Glutes",
+            "Calves",
+          ].map((muscle) => (
+            <div key={muscle} className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value={muscle}
+                id={muscle}
+                checked={selectedMuscleGroups.includes(muscle)}
+                onChange={() => handleToggleMuscleGroup(muscle)}
+              />
+              <label className="form-check-label" htmlFor={muscle}>
+                {muscle}
+              </label>
+            </div>
           ))}
         </Modal.Body>
         <Modal.Footer>

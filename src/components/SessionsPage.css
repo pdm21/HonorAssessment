@@ -176,8 +176,16 @@
   padding-bottom: 0.2rem; /* Add space between text and underline */
 }
 
-.edit-button {
-  cursor: pointer;
+/* Styling for muscle group badges */
+.muscle-group-badge {
+  display: inline-block;
+  background-color: #e9f5ec;
+  color: #1d7732;
+  border: 1px solid #1d7732;
+  border-radius: 0.375rem;
+  padding: 0.2em 0.4em;
+  margin-right: 0.2em;
+  font-size: 0.75em;
 }
 
 .muscle-groups {
@@ -185,7 +193,7 @@
   flex-wrap: wrap;
 }
 
-.muscle-groups .badge {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+.edit-button {
+  cursor: pointer;
+  margin-left: 0.5rem;
 }
