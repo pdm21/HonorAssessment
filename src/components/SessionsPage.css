@@ -158,3 +158,12 @@
   color: #6c757d !important;
   font-size: 10px !important;
 }
+
+.footer a {
+  color: #6c757d !important;
+  text-decoration: none; /* Remove underline */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
