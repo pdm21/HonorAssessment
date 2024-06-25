@@ -11,9 +11,10 @@ html {
   border-radius: 8px;
 }
 
-.login-page .card h2 {
+.login-page .sign-in-text {
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: left; /* Align text to the left */
 }
 
 .login-page .form-control {
