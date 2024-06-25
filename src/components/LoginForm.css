@@ -1,5 +1,10 @@
 /* src/components/LoginForm.css */
 
+body,
+html {
+  overflow: hidden; /* Prevent scrolling */
+}
+
 .login-page .card {
   max-width: 400px;
   width: 100%;
@@ -38,6 +43,15 @@
   object-fit: cover;
 }
 
+.login-page .text-end a {
+  color: #1d7732; /* Green color for the link */
+  text-decoration: none; /* Remove underline */
+}
+
+.login-page .text-end a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
 @media (max-width: 768px) {
   .login-page .container-fluid {
     flex-direction: column;
@@ -49,4 +63,26 @@
 
 .login-page .container-fluid {
   overflow: hidden; /* Disable scrolling */
+}
+
+.login-page .left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push footer to the bottom */
+  height: 100vh; /* Full height to avoid overflow */
+  padding: 2rem; /* Add some padding */
+}
+
+.login-page .footer-links {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.login-page .footer-links a {
+  color: #1d7732; /* Green color for the link */
+  text-decoration: none; /* Remove underline */
+}
+
+.login-page .footer-links a:hover {
+  text-decoration: underline; /* Add underline on hover */
 }

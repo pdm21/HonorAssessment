@@ -1,4 +1,4 @@
-// src/LoginForm.js
+// src/components/LoginForm.js
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -54,41 +54,54 @@ const LoginForm = () => {
   return (
     <div className="login-page container-fluid d-flex vh-100">
       <div className="row flex-grow-1 align-items-center">
-        <div className="col-md-6 d-flex justify-content-center">
-          <div className="card p-4 shadow-lg">
-            <h2 className="text-center mb-4">Sign In</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  placeholder="Email Address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <input
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-              <button type="submit" className="btn btn-primary w-100">
-                Sign In
-              </button>
-              <div className="text-end mt-3">
-                <a href="#" className="text-decoration-none">
-                  Forgot Password?
-                </a>
-              </div>
-            </form>
+        <div className="col-md-6 d-flex flex-column left-container">
+          <div className="d-flex justify-content-center align-items-center flex-grow-1">
+            <div className="card p-4 shadow-lg">
+              <h2 className="text-center mb-4">Sign In</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary w-100">
+                  Sign In
+                </button>
+                <div className="text-end mt-3">
+                  <a href="#" className="text-decoration-none">
+                    Forgot Password?
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div className="footer-links">
+            <a href="#" className="text-decoration-none me-3">
+              Terms
+            </a>
+            <a href="#" className="text-decoration-none me-3">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-decoration-none">
+              Contact Us
+            </a>
           </div>
         </div>
         <div className="col-md-6 d-flex align-items-center justify-content-center login-image-container">
@@ -97,19 +110,6 @@ const LoginForm = () => {
             alt="Weightlifting"
             className="img-fluid weightlifting-image"
           />
-        </div>
-      </div>
-      <div className="row w-100 position-absolute bottom-0 start-0 p-3">
-        <div className="col text-center">
-          <a href="#" className="text-decoration-none me-3">
-            Terms
-          </a>
-          <a href="#" className="text-decoration-none me-3">
-            Privacy Policy
-          </a>
-          <a href="#" className="text-decoration-none">
-            Contact Us
-          </a>
         </div>
       </div>
     </div>
