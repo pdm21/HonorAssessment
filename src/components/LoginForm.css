@@ -115,9 +115,26 @@ html {
   background-color: transparent; /* Set the background to be transparent */
   box-shadow: none; /* Remove shadow */
 }
+
 .login-page
   .col-md-6.d-flex.align-items-center.justify-content-center.login-image-container {
   align-items: flex-start; /* Adjust this value to move the image up or down */
-  /* padding-top: 200px; Optional: fine-tune the positioning */
   margin-top: -60px;
+}
+
+.sign-up-text {
+  position: absolute;
+  top: 2rem; /* Adjust this value to move the text up or down */
+  left: 21rem; /* Adjust this value to align with the right edge of the input fields */
+  font-size: 1rem;
+  color: #6c757d; /* Adjust color if needed */
+}
+
+.sign-up-text a {
+  color: #1d7732; /* Adjust color if needed */
+  text-decoration: none;
+}
+
+.sign-up-text a:hover {
+  text-decoration: underline;
 }

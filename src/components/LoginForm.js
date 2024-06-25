@@ -59,6 +59,11 @@ const LoginForm = () => {
       <div className="row flex-grow-1 align-items-center">
         <div className="col-md-6 d-flex flex-column left-container">
           <div className="d-flex justify-content-center align-items-center flex-grow-1">
+            <div className="sign-up-text">
+              <span>
+                Not a Member yet? <a href="#">Sign Up</a>
+              </span>
+            </div>
             <div className="sign-in-container card p-4">
               <h2 className="sign-in-text mb-4">Sign In</h2>
               <form onSubmit={handleSubmit}>
