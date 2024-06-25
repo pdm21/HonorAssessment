@@ -1,3 +1,5 @@
+// src/LoginForm.js
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -37,6 +39,7 @@ const LoginForm = () => {
       if (data.data && data.data.accessToken) {
         localStorage.setItem("accessToken", data.data.accessToken);
         console.log("Token stored:", data.data.accessToken);
+        // alert("Login successful!");
         navigate("/sessions"); // Redirect to the sessions page
       } else {
         console.log("No token found in response:", data);
@@ -94,6 +97,19 @@ const LoginForm = () => {
             alt="Weightlifting"
             className="img-fluid weightlifting-image"
           />
+        </div>
+      </div>
+      <div className="row w-100 position-absolute bottom-0 start-0 p-3">
+        <div className="col text-center">
+          <a href="#" className="text-decoration-none me-3">
+            Terms
+          </a>
+          <a href="#" className="text-decoration-none me-3">
+            Privacy Policy
+          </a>
+          <a href="#" className="text-decoration-none">
+            Contact Us
+          </a>
         </div>
       </div>
     </div>
