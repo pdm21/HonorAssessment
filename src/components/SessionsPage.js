@@ -1,9 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "./SessionsPage.css"; // Import custom CSS
 
 const SessionsPage = () => {
   const [sessions, setSessions] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSessionId, setSelectedSessionId] = useState(null);
+  const [muscleGroups, setMuscleGroups] = useState([]);
+  const [allMuscleGroups, setAllMuscleGroups] = useState([
+    "Back",
+    "Biceps",
+    "Chest",
+    "Core",
+    "Shoulders",
+    "Triceps",
+    "Quads",
+    "Hamstrings",
+    "Glutes",
+    "Calves",
+  ]);
 
   useEffect(() => {
     const fetchSessions = async () => {
@@ -79,6 +95,31 @@ const SessionsPage = () => {
     }
   };
 
+  const handleEditMuscleGroups = (sessionId, currentMuscleGroups) => {
+    setSelectedSessionId(sessionId);
+    setMuscleGroups(currentMuscleGroups || []);
+    setShowModal(true);
+  };
+
+  const handleSaveMuscleGroups = () => {
+    setSessions((prevSessions) =>
+      prevSessions.map((session) =>
+        session.id === selectedSessionId
+          ? { ...session, muscleGroups: muscleGroups }
+          : session
+      )
+    );
+    setShowModal(false);
+  };
+
+  const handleToggleMuscleGroup = (muscle) => {
+    setMuscleGroups((prevMuscleGroups) =>
+      prevMuscleGroups.includes(muscle)
+        ? prevMuscleGroups.filter((m) => m !== muscle)
+        : [...prevMuscleGroups, muscle]
+    );
+  };
+
   return (
     <div className="sessions-page-container container-fluid d-flex flex-column">
       <div className="row mt-5 flex-grow-1">
@@ -128,11 +169,31 @@ const SessionsPage = () => {
                           </span>
                         </td>
                         <td>
-                          {session.muscleGroups
-                            ? session.muscleGroups
-                                .map((muscle) => muscle.name)
-                                .join(", ")
-                            : "N/A"}
+                          <div className="d-flex align-items-center">
+                            <div className="muscle-groups">
+                              {session.muscleGroups &&
+                                session.muscleGroups.map((muscle, index) => (
+                                  <span
+                                    key={index}
+                                    className="badge badge-primary me-1"
+                                  >
+                                    {muscle.name}
+                                  </span>
+                                ))}
+                            </div>
+                            <Button
+                              variant="link"
+                              className="p-0 ms-auto edit-button"
+                              onClick={() =>
+                                handleEditMuscleGroups(
+                                  session.id,
+                                  session.muscleGroups
+                                )
+                              }
+                            >
+                              <i className="fas fa-edit"></i>
+                            </Button>
+                          </div>
                         </td>
                       </tr>
                     ))}
@@ -161,6 +222,34 @@ const SessionsPage = () => {
           </div>
         </div>
       </footer>
+
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Muscle Groups</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {allMuscleGroups.map((muscle) => (
+            <Button
+              key={muscle}
+              variant={
+                muscleGroups.includes(muscle) ? "primary" : "outline-primary"
+              }
+              className="me-1 mb-1"
+              onClick={() => handleToggleMuscleGroup(muscle)}
+            >
+              {muscle}
+            </Button>
+          ))}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleSaveMuscleGroups}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
