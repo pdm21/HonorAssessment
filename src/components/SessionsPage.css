@@ -167,3 +167,11 @@
 .footer a:hover {
   text-decoration: underline; /* Add underline on hover */
 }
+
+/* Active link styling */
+.past-sessions-title .active {
+  font-weight: bold; /* Make text bold */
+  color: #1d7423 !important; /* Example color */
+  border-bottom: 2px solid #1d7423; /* Underline effect */
+  padding-bottom: 0.2rem; /* Add space between text and underline */
+}

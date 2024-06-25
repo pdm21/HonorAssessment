@@ -86,7 +86,7 @@ const SessionsPage = () => {
           <div className="card mb-4">
             <div className="card-body">
               <h2 className="past-sessions-title card-title">
-                <a href="#" className="text-decoration-none">
+                <a href="#" className="text-decoration-none active">
                   Past Sessions
                 </a>
               </h2>
