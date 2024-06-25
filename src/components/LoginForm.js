@@ -1,5 +1,3 @@
-// src/components/LoginForm.js
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,6 +7,7 @@ import weightliftingImage from "../assets/weightlifting.png"; // Import the imag
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -51,6 +50,10 @@ const LoginForm = () => {
     }
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="login-page container-fluid d-flex vh-100">
       <div className="row flex-grow-1 align-items-center">
@@ -70,9 +73,9 @@ const LoginForm = () => {
                     required
                   />
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 position-relative">
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     className="form-control"
                     id="password"
                     placeholder="Password"
@@ -80,6 +83,16 @@ const LoginForm = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
+                  <span
+                    className="password-toggle-icon"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? (
+                      <i className="fas fa-eye-slash"></i>
+                    ) : (
+                      <i className="fas fa-eye"></i>
+                    )}
+                  </span>
                 </div>
                 <button type="submit" className="btn btn-primary w-100">
                   Sign In

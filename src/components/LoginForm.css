@@ -86,3 +86,16 @@ html {
 .login-page .footer-links a:hover {
   text-decoration: underline; /* Add underline on hover */
 }
+
+.login-page .position-relative {
+  position: relative;
+}
+
+.login-page .password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+}
