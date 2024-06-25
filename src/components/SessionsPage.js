@@ -97,7 +97,9 @@ const SessionsPage = () => {
 
   const handleEditMuscleGroups = (sessionId, currentMuscleGroups) => {
     setSelectedSessionId(sessionId);
-    setMuscleGroups(currentMuscleGroups || []);
+    setMuscleGroups(
+      currentMuscleGroups ? currentMuscleGroups.map((m) => m.name) : []
+    );
     setShowModal(true);
   };
 
@@ -105,7 +107,10 @@ const SessionsPage = () => {
     setSessions((prevSessions) =>
       prevSessions.map((session) =>
         session.id === selectedSessionId
-          ? { ...session, muscleGroups: muscleGroups }
+          ? {
+              ...session,
+              muscleGroups: muscleGroups.map((muscle) => ({ name: muscle })),
+            }
           : session
       )
     );
