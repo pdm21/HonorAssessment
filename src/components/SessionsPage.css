@@ -98,3 +98,13 @@
   font-weight: 900;
   color: #000a01;
 }
+/* Center the "Past Sessions" title container */
+.top-cont-sessions {
+  width: 75%;
+  margin: auto;
+}
+/* Center the container with the list of sessions */
+.bottom-cont-sessions {
+  width: 75%;
+  margin: auto;
+}

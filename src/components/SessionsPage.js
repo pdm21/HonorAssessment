@@ -82,14 +82,14 @@ const SessionsPage = () => {
   return (
     <div className="sessions-page-container container-fluid">
       <div className="row mt-5">
-        <div className="col-12">
+        <div className="top-cont-sessions col-12">
           <div className="card mb-4">
             <div className="card-body">
               <h2 className="card-title">Past Sessions</h2>
             </div>
           </div>
         </div>
-        <div className="col-12">
+        <div className="bottom-cont-sessions col-12">
           <div className="card">
             <div className="card-body">
               <h1 className="second-card-sessions mb-4">Sessions</h1>
