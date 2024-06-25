@@ -4,7 +4,6 @@ import "./SessionsPage.css"; // Import custom CSS
 
 const SessionsPage = () => {
   const [sessions, setSessions] = useState([]);
-  const [activeTab, setActiveTab] = useState("pastSessions");
 
   useEffect(() => {
     const fetchSessions = async () => {
@@ -71,8 +70,7 @@ const SessionsPage = () => {
     switch (status) {
       case "Not Started":
         return "badge badge-secondary";
-      case "Canceled":
-      case "Cancelled":
+      case "Canceled" || "Cancelled":
         return "badge badge-danger";
       case "Completed":
         return "badge badge-success";
@@ -82,21 +80,16 @@ const SessionsPage = () => {
   };
 
   return (
-    <div className="page-container">
-      <div className="container mt-5">
-        <div className="card mb-4">
-          <div className="card-body d-flex justify-content-between">
-            <button
-              className={`tab-button ${
-                activeTab === "pastSessions" ? "active" : ""
-              }`}
-              onClick={() => setActiveTab("pastSessions")}
-            >
-              Past Sessions
-            </button>
+    <div className="sessions-page-container container-fluid">
+      <div className="row mt-5">
+        <div className="col-12">
+          <div className="card mb-4">
+            <div className="card-body">
+              <h2 className="card-title">Past Sessions</h2>
+            </div>
           </div>
         </div>
-        {activeTab === "pastSessions" && (
+        <div className="col-12">
           <div className="card">
             <div className="card-body">
               <h1 className="second-card-sessions mb-4">Sessions</h1>
@@ -146,7 +139,7 @@ const SessionsPage = () => {
               )}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

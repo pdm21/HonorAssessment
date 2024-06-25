@@ -1,8 +1,10 @@
+// src/LoginForm.js
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./LoginForm.css"; // Import the custom CSS
-import weightliftingImage from "../assets/weightlifting.png"; // Import the image
+import weightliftingImage from "../assets/weightlifting.png"; // Correct path
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -50,31 +52,37 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="container-fluid d-flex vh-100">
+    <div className="login-page container-fluid d-flex vh-100">
       <div className="row flex-grow-1 align-items-center">
         <div className="col-md-6 d-flex justify-content-center">
           <div className="card p-4 shadow-lg">
             <h2 className="text-center mb-4">Sign In</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   className="form-control"
                   id="email"
-                  placeholder="Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
                   required
                 />
               </div>
               <div className="mb-3">
+                <label htmlFor="password" className="form-label">
+                  Password
+                </label>
                 <input
                   type="password"
                   className="form-control"
                   id="password"
-                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
                   required
                 />
               </div>
@@ -93,7 +101,7 @@ const LoginForm = () => {
           <img
             src={weightliftingImage}
             alt="Weightlifting"
-            className="img-fluid weightlifting-image"
+            className="img-fluid"
           />
         </div>
       </div>
