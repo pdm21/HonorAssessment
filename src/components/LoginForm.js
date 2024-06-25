@@ -96,14 +96,14 @@ const LoginForm = () => {
                     )}
                   </span>
                 </div>
-                <button type="submit" className="btn btn-primary w-100">
-                  Sign In
-                </button>
                 <div className="text-end mt-3">
                   <a href="#" className="text-decoration-none">
                     Forgot Password?
                   </a>
                 </div>
+                <button type="submit" className="btn btn-primary mt-3">
+                  Sign In
+                </button>
               </form>
             </div>
           </div>
