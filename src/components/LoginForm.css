@@ -1,4 +1,4 @@
-/* src/LoginForm.css */
+/* src/components/LoginForm.css */
 
 .login-page .card {
   max-width: 400px;
@@ -16,6 +16,12 @@
   height: auto;
 }
 
+.login-page .weightlifting-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 @media (max-width: 768px) {
   .login-page .container-fluid {
     flex-direction: column;
@@ -23,4 +29,8 @@
   .login-page .card {
     margin-bottom: 2rem;
   }
+}
+
+.login-page .container-fluid {
+  overflow: hidden; /* Disable scrolling */
 }

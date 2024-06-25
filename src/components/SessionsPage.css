@@ -1,27 +1,10 @@
+/* src/SessionsPage.css */
+
 .sessions-page-container {
-  width: 100%;
-  padding: 20px; /* Add padding to ensure spacing */
-  background-color: #f8f9fa; /* Light grey background */
-  min-height: 100vh;
-}
-
-.card {
-  width: 100%; /* Ensure the card takes full width */
-  margin-bottom: 20px; /* Add margin at the bottom to separate cards */
-}
-
-.card-body {
-  width: 100%; /* Ensure the card body takes full width */
-}
-
-.table {
-  width: 100%; /* Ensure the table takes full width */
-}
-
-.page-container {
   background-color: #f8f9fa; /* Light grey background */
   min-height: 100vh;
   padding: 2rem 0;
+  width: 100%; /* Ensure it takes full width */
 }
 
 .badge {
@@ -100,23 +83,12 @@
   margin-bottom: 1.5rem;
 }
 
+/* New style for Past Sessions title */
 .card-title {
   font-family: "Arial", sans-serif; /* Example font family */
   font-size: 1rem; /* Example font size */
   font-weight: bold; /* Example font weight */
   color: #1d7423; /* Example color */
-  position: relative;
-}
-
-.card-title::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #1d7423; /* Green underline */
-  position: absolute;
-  bottom: -5px; /* Adjust the position as needed */
-  left: 0;
 }
 
 .second-card-sessions {

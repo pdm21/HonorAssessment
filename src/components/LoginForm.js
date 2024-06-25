@@ -1,10 +1,8 @@
-// src/LoginForm.js
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./LoginForm.css"; // Import the custom CSS
-import weightliftingImage from "../assets/weightlifting.png"; // Correct path
+import weightliftingImage from "../assets/weightlifting.png"; // Import the image
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -59,30 +57,24 @@ const LoginForm = () => {
             <h2 className="text-center mb-4">Sign In</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email Address
-                </label>
                 <input
                   type="email"
                   className="form-control"
                   id="email"
+                  placeholder="Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
                   required
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="password" className="form-label">
-                  Password
-                </label>
                 <input
                   type="password"
                   className="form-control"
                   id="password"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password"
                   required
                 />
               </div>
@@ -97,11 +89,11 @@ const LoginForm = () => {
             </form>
           </div>
         </div>
-        <div className="col-md-6 d-flex align-items-center justify-content-center">
+        <div className="col-md-6 d-flex align-items-center justify-content-center login-image-container">
           <img
             src={weightliftingImage}
             alt="Weightlifting"
-            className="img-fluid"
+            className="img-fluid weightlifting-image"
           />
         </div>
       </div>
