@@ -1,7 +1,8 @@
-// src/LoginForm.js
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./LoginForm.css"; // Import the custom CSS
+import weightliftingImage from "../assets/weightlifting.png"; // Import the image
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -49,37 +50,54 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="email" className="form-label">
-          Email address
-        </label>
-        <input
-          type="email"
-          className="form-control"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+    <div className="container-fluid d-flex vh-100">
+      <div className="row flex-grow-1 align-items-center">
+        <div className="col-md-6 d-flex justify-content-center">
+          <div className="card p-4 shadow-lg">
+            <h2 className="text-center mb-4">Sign In</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary w-100">
+                Sign In
+              </button>
+              <div className="text-end mt-3">
+                <a href="#" className="text-decoration-none">
+                  Forgot Password?
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="col-md-6 d-flex align-items-center justify-content-center">
+          <img
+            src={weightliftingImage}
+            alt="Weightlifting"
+            className="img-fluid weightlifting-image"
+          />
+        </div>
       </div>
-      <div className="mb-3">
-        <label htmlFor="password" className="form-label">
-          Password
-        </label>
-        <input
-          type="password"
-          className="form-control"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        Login
-      </button>
-    </form>
+    </div>
   );
 };
 
