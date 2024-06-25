@@ -80,8 +80,8 @@ const SessionsPage = () => {
   };
 
   return (
-    <div className="sessions-page-container container-fluid">
-      <div className="row mt-5">
+    <div className="sessions-page-container container-fluid d-flex flex-column">
+      <div className="row mt-5 flex-grow-1">
         <div className="top-cont-sessions col-12">
           <div className="card mb-4">
             <div className="card-body">
@@ -145,6 +145,22 @@ const SessionsPage = () => {
           </div>
         </div>
       </div>
+      <footer className="footer mt-auto py-3">
+        <div className="container d-flex justify-content-between">
+          <span className="text-muted">2024 © HONOR</span>
+          <div>
+            <a href="#" className="text-muted me-3">
+              About
+            </a>
+            <a href="#" className="text-muted me-3">
+              Contact
+            </a>
+            <a href="#" className="text-muted">
+              FAQ
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
