@@ -104,11 +104,13 @@
 .top-cont-sessions {
   width: 75%;
   margin: auto;
+  margin-bottom: 0;
 }
 /* Center the container with the list of sessions */
 .bottom-cont-sessions {
   width: 75%;
   margin: auto;
+  margin-top: 0;
 }
 
 .header-row {
@@ -132,17 +134,27 @@
 
 /* Footer */
 .footer {
-  background-color: #f8f9fa;
-  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa !important; /* Light grey background */
+  border-top: 1px solid #dee2e6 !important;
+  padding: 0.5rem 0 !important; /* Adjust padding to shorten height */
+  height: 40px !important; /* Set a fixed height if desired */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .footer .text-muted {
   color: #6c757d !important;
-  font-size: 10px;
+  font-size: 10px !important;
 }
