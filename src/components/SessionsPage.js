@@ -146,6 +146,7 @@ const SessionsPage = () => {
                       <th>Session Type</th>
                       <th>Status</th>
                       <th>Muscle</th>
+                      <th>Edit</th> {/* New column for edit button */}
                     </tr>
                   </thead>
                   <tbody>
@@ -177,18 +178,20 @@ const SessionsPage = () => {
                                   </span>
                                 ))
                               : "N/A"}
-                            <span
-                              className="edit-button"
-                              onClick={() =>
-                                handleEditMuscleGroups(
-                                  session.id,
-                                  session.muscleGroups
-                                )
-                              }
-                            >
-                              <i className="fas fa-edit"></i>
-                            </span>
                           </div>
+                        </td>
+                        <td>
+                          <span
+                            className="edit-button"
+                            onClick={() =>
+                              handleEditMuscleGroups(
+                                session.id,
+                                session.muscleGroups
+                              )
+                            }
+                          >
+                            <i className="fas fa-edit"></i>
+                          </span>
                         </td>
                       </tr>
                     ))}
