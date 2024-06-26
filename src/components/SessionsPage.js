@@ -210,7 +210,7 @@ const SessionsPage = () => {
                                   {muscle.title}
                                 </span>
                               ))
-                            : "N/A"}
+                            : ""}
                           <span
                             className="edit-button"
                             onClick={() =>
