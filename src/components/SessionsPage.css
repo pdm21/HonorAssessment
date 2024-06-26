@@ -7,6 +7,7 @@
   width: 100%; /* Ensure it takes full width */
   display: flex;
   flex-direction: column;
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .badge {
@@ -115,6 +116,8 @@
 
 .header-row {
   border: 0;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
 .header-row th {
@@ -196,4 +199,26 @@
 .edit-button {
   cursor: pointer;
   margin-left: 0.5rem;
+}
+
+.scrollable-container {
+  max-height: 70vh; /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+.sticky-title {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000; /* Ensure it stays above other content */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.sticky-header th {
+  position: sticky;
+  top: 4rem; /* Adjust based on the height of the title */
+  background-color: white;
+  z-index: 1000; /* Ensure it stays above other content */
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import "./SessionsPage.css"; // Import custom CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./SessionsPage.css";
 
 const SessionsPage = () => {
   const [sessions, setSessions] = useState([]);
@@ -129,13 +129,15 @@ const SessionsPage = () => {
             </div>
           </div>
         </div>
-        <div className="bottom-cont-sessions col-12">
+        <div className="bottom-cont-sessions col-12 scrollable-container">
           <div className="card">
             <div className="card-body">
-              <h1 className="second-card-sessions mb-4">Sessions</h1>
+              <h1 className="second-card-sessions mb-4 sticky-title">
+                Sessions
+              </h1>
               {sessions.length > 0 ? (
                 <table className="table table-bordered">
-                  <thead>
+                  <thead className="sticky-header">
                     <tr className="header-row">
                       <th>Client</th>
                       <th>Date & Time</th>
