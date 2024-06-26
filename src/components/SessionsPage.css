@@ -44,18 +44,23 @@
   font-weight: bold;
 }
 
+/* General table styling */
 .table {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
   font-size: 0.8rem; /* Smaller font size */
+  border-collapse: collapse; /* Remove borders between cells */
 }
 
 .table th,
 .table td {
-  padding: 0.5rem; /* Reduced padding */
-  vertical-align: top;
-  border-top: 1px solid #dee2e6;
+  text-align: center; /* Center text horizontally */
+  vertical-align: middle; /* Center text vertically */
+  padding: 0.5rem; /* Consistent padding */
+  margin: 0; /* Remove extra margin */
+  border: none; /* Remove borders between cells */
+  font-weight: bold; /* Make text bolder */
 }
 
 .table thead th {
@@ -73,7 +78,7 @@
 
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #dee2e6;
+  border: none; /* Remove borders between cells */
 }
 
 .table-bordered thead th,
@@ -104,12 +109,14 @@
   font-weight: 900;
   color: #000a01;
 }
+
 /* Center the "Past Sessions" title container */
 .top-cont-sessions {
   width: 75%;
   margin: auto;
   margin-bottom: 0;
 }
+
 /* Center the container with the list of sessions */
 .bottom-cont-sessions {
   width: 75%;
@@ -183,9 +190,6 @@
 }
 
 /* Styling for muscle group badges */
-
-/* Styling for muscle group badges */
-/* Styling for muscle group badges */
 .muscle-group-badge {
   display: inline-block;
   background-color: #e6f7ff; /* Very light blue background color */
@@ -204,6 +208,7 @@
 .muscle-groups {
   display: flex;
   flex-wrap: wrap;
+  justify-content: left; /* Left-align muscle group badges */
 }
 
 .edit-button {
@@ -253,6 +258,11 @@
 .table td {
   position: relative; /* Ensure the edit button positions relative to the cell */
   vertical-align: middle;
+  text-align: center; /* Center text horizontally */
+  padding: 0.5rem; /* Consistent padding */
+  margin: 0; /* Remove extra margin */
+  border: none; /* Remove borders between cells */
+  font-weight: bold; /* Make text bolder */
 }
 
 /* Remove borders and padding to integrate the edit button */
