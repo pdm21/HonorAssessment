@@ -1,62 +1,83 @@
+/* Prevent scrolling on the body and HTML elements */
 body,
 html {
-  overflow: hidden; /* Prevent scrolling */
+  overflow: hidden;
 }
 
+/* Style for the card element in the login page */
+/* Sets maximum width, border radius, and removes border and shadow */
 .login-page .card {
   max-width: 400px;
   width: 100%;
   border-radius: 8px;
-  background-color: transparent; /* Set the background to be transparent */
-  border: none; /* Remove border */
-  box-shadow: none; /* Remove shadow */
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
 
+/* Style for the sign-in text */
+/* Sets font size, weight, and text alignment */
 .login-page .sign-in-text {
   font-size: 1.5rem;
   font-weight: bold;
-  text-align: left; /* Align text to the left */
+  text-align: left;
 }
 
+/* Style for form control elements in the login page */
+/* Adds rounded corners, padding, and light grey background */
 .login-page .form-control {
-  border-radius: 0.5rem; /* Add rounded corners */
-  padding: 0.75rem; /* Add padding for better spacing */
+  border-radius: 0.5rem;
+  padding: 0.75rem;
   background-color: rgba(237, 237, 237, 0.739);
 }
 
+/* Style for the primary button in the login page */
+/* Sets background color, border radius, padding, and text alignment */
 .login-page .btn-primary {
-  background-color: #1d7732; /* Green background */
+  background-color: #1d7732;
   border: none;
-  border-radius: 0.5rem; /* Rounded corners */
-  padding: 0.75rem 2rem; /* Adjust padding */
-  margin-top: 1rem; /* Margin to separate from "Forgot Password?" */
-  text-align: left; /* Align text to the left */
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  text-align: left;
 }
 
+/* Style for the primary button on hover */
+/* Changes background color to a darker green */
 .login-page .btn-primary:hover {
-  background-color: #145522; /* Darker green on hover */
+  background-color: #145522;
 }
 
+/* Style for images with class img-fluid */
+/* Ensures they are responsive with max width and auto height */
 .login-page .img-fluid {
   max-width: 100%;
   height: auto;
 }
 
+/* Style for the weightlifting image */
+/* Sets height, width, and object-fit to cover */
 .login-page .weightlifting-image {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
+/* Style for links inside text-end elements */
+/* Sets color and removes underline */
 .login-page .text-end a {
-  color: #1d7732; /* Green color for the link */
-  text-decoration: none; /* Remove underline */
+  color: #1d7732;
+  text-decoration: none;
 }
 
+/* Style for links inside text-end elements on hover */
+/* Adds underline on hover */
 .login-page .text-end a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline;
 }
 
+/* Media query for devices with max-width of 768px */
+/* Adjusts the layout for smaller screens */
 @media (max-width: 768px) {
   .login-page .container-fluid {
     flex-direction: column;
@@ -66,36 +87,48 @@ html {
   }
 }
 
+/* Disable scrolling for the container-fluid element in the login page */
 .login-page .container-fluid {
-  overflow: hidden; /* Disable scrolling */
+  overflow: hidden;
 }
 
+/* Style for the left container in the login page */
+/* Centers the container vertically with full height and padding */
 .login-page .left-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center the container vertically */
-  height: 100vh; /* Full height to avoid overflow */
-  padding: 2rem; /* Add some padding */
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
 }
 
+/* Style for the footer links in the login page */
+/* Sets margin and text alignment */
 .login-page .footer-links {
   margin-bottom: 2rem;
   text-align: center;
 }
 
+/* Style for the footer links' anchor elements */
+/* Sets color and removes underline */
 .login-page .footer-links a {
-  color: #1d7732; /* Green color for the link */
-  text-decoration: none; /* Remove underline */
+  color: #1d7732;
+  text-decoration: none;
 }
 
+/* Style for the footer links' anchor elements on hover */
+/* Adds underline on hover */
 .login-page .footer-links a:hover {
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline;
 }
 
+/* Utility class for position relative */
 .login-page .position-relative {
   position: relative;
 }
 
+/* Style for the password toggle icon */
+/* Positions it absolutely within the input field and adds cursor pointer */
 .login-page .password-toggle-icon {
   position: absolute;
   top: 50%;
@@ -105,36 +138,47 @@ html {
   color: #6c757d;
 }
 
+/* Additional margin-top for the primary button */
 .login-page .btn-primary {
-  margin-top: 1rem; /* Add margin to the top to create spacing */
+  margin-top: 1rem;
 }
 
+/* Style for the sign-in container */
+/* Sets margin, border, background color, and removes shadow */
 .sign-in-container {
   margin-top: 0;
   border: 0;
-  background-color: transparent; /* Set the background to be transparent */
-  box-shadow: none; /* Remove shadow */
+  background-color: transparent;
+  box-shadow: none;
 }
 
+/* Style for the image container in the login page */
+/* Aligns items and adjusts margin to position image */
 .login-page
   .col-md-6.d-flex.align-items-center.justify-content-center.login-image-container {
-  align-items: flex-start; /* Adjust this value to move the image up or down */
+  align-items: flex-start;
   margin-top: -60px;
 }
 
+/* Style for the sign-up text */
+/* Positions it absolutely and sets font size and color */
 .sign-up-text {
   position: absolute;
-  top: 2rem; /* Adjust this value to move the text up or down */
-  left: 21rem; /* Adjust this value to align with the right edge of the input fields */
+  top: 2rem;
+  left: 21rem;
   font-size: 1rem;
-  color: #6c757d; /* Adjust color if needed */
+  color: #6c757d;
 }
 
+/* Style for the anchor elements in the sign-up text */
+/* Sets color and removes underline */
 .sign-up-text a {
-  color: #1d7732; /* Adjust color if needed */
+  color: #1d7732;
   text-decoration: none;
 }
 
+/* Style for the anchor elements in the sign-up text on hover */
+/* Adds underline on hover */
 .sign-up-text a:hover {
   text-decoration: underline;
 }
