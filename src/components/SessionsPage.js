@@ -3,12 +3,14 @@ import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SessionsPage.css";
 
+// Main functional component for the SessionsPage
 const SessionsPage = () => {
-  const [sessions, setSessions] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [selectedSessionId, setSelectedSessionId] = useState(null);
-  const [selectedMuscleGroups, setSelectedMuscleGroups] = useState([]);
+  const [sessions, setSessions] = useState([]); // State to store sessions
+  const [showModal, setShowModal] = useState(false); // State for showing/hiding modal
+  const [selectedSessionId, setSelectedSessionId] = useState(null); // State for selected session ID
+  const [selectedMuscleGroups, setSelectedMuscleGroups] = useState([]); // State for selected muscle groups
 
+  // Fetch sessions data on component mount
   useEffect(() => {
     const fetchSessions = async () => {
       const token = localStorage.getItem("accessToken");
@@ -17,6 +19,7 @@ const SessionsPage = () => {
         return;
       }
 
+      // Send a GET request to the sessions API endpoint
       try {
         const response = await fetch(
           "https://dev-api.livehonorr.com/coach/session/past",
@@ -36,6 +39,7 @@ const SessionsPage = () => {
         const data = await response.json();
         console.log("Fetched sessions data:", data);
 
+        // Sort sessions data by start time and set the sessions state
         if (data && data.data) {
           const sortedSessions = data.data.sort(
             (a, b) => new Date(b.startTime) - new Date(a.startTime)
@@ -56,6 +60,7 @@ const SessionsPage = () => {
     fetchSessions();
   }, []);
 
+  // Format date into a readable string
   const formatDate = (dateString) => {
     const options = {
       year: "numeric",
@@ -70,6 +75,7 @@ const SessionsPage = () => {
     );
   };
 
+  // Determine the class for session status
   const getStatusClass = (status) => {
     switch (status) {
       case "Not Started":
@@ -83,14 +89,20 @@ const SessionsPage = () => {
     }
   };
 
+  // This function is called when the edit button is clicked. It sets the selectedSessionId and updates the selectedMuscleGroups state
+  // to contain the titles of the muscle groups for the selected session. If there are no muscle groups, it sets an empty array.
+  // The setShowModal(true) line opens the modal.
   const handleEditMuscleGroups = (sessionId, muscleGroups) => {
+    console.log("Editing Muscle Groups for Session:", sessionId, muscleGroups);
     setSelectedSessionId(sessionId);
     setSelectedMuscleGroups(
-      muscleGroups ? muscleGroups.map((group) => group.title) : []
+      muscleGroups ? muscleGroups.map((group) => group.title.trim()) : []
     );
     setShowModal(true);
   };
 
+  // This function is called when a checkbox in the modal is toggled. It adds or removes the muscle group from the
+  // selectedMuscleGroups state.
   const handleToggleMuscleGroup = (muscle) => {
     setSelectedMuscleGroups((prev) =>
       prev.includes(muscle)
@@ -99,7 +111,9 @@ const SessionsPage = () => {
     );
   };
 
+  // Save the edited muscle groups
   const handleSaveMuscleGroups = () => {
+    console.log("Saving Muscle Groups:", selectedMuscleGroups);
     const updatedSessions = sessions.map((session) =>
       session.id === selectedSessionId
         ? {
@@ -117,6 +131,7 @@ const SessionsPage = () => {
 
   return (
     <div className="sessions-page-container container-fluid d-flex flex-column">
+      {/* Navbar for navigation */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">
           Sessions
@@ -144,15 +159,13 @@ const SessionsPage = () => {
                 Sessions
               </a>
             </li>
-            {/* <li className="nav-item">
-              <a className="nav-link" href="#">
-                Sessions
-              </a>
-            </li> */}
           </ul>
         </div>
       </nav>
+
+      {/* Main content area for the page */}
       <div className="row mt-5 flex-grow-1">
+        {/* Container for the past sessions title */}
         <div className="top-cont-sessions col-12">
           <div className="card mb-4">
             <div className="card-body">
@@ -164,6 +177,8 @@ const SessionsPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Container for the sessions table */}
         <div className="bottom-cont-sessions col-12 scrollable-container">
           <div className="card">
             <div className="card-body">
@@ -234,6 +249,8 @@ const SessionsPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Footer section */}
       <footer className="footer mt-auto py-3">
         <div className="container d-flex justify-content-between">
           <span className="text-muted">2024 © HONOR</span>
@@ -251,6 +268,7 @@ const SessionsPage = () => {
         </div>
       </footer>
 
+      {/* Modal for editing muscle groups */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Muscle Groups</Modal.Title>

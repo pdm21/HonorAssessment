@@ -1,5 +1,5 @@
-/* src/SessionsPage.css */
-
+/* General styling for the sessions page container */
+/* Sets background color, minimum height, padding, full width, and enables vertical scrolling */
 .sessions-page-container {
   background-color: #f8f9fa; /* Light grey background */
   min-height: 100vh;
@@ -10,6 +10,8 @@
   overflow-y: auto; /* Enable vertical scrolling */
 }
 
+/* Styling for badges */
+/* Ensures badges are inline-flex items, centered vertically and horizontally, with padding and rounded corners */
 .badge {
   display: inline-flex; /* Ensures badges are inline and flex items */
   align-items: center; /* Vertically centers content */
@@ -24,6 +26,8 @@
   vertical-align: baseline;
 }
 
+/* Specific styling for different badge types */
+/* Sets background and text colors for danger, success, and secondary badges */
 .badge-danger {
   background-color: #ffafb7;
   color: #000000;
@@ -39,12 +43,15 @@
   color: #000000;
 }
 
+/* Styling for client name */
+/* Sets text color and font weight */
 .client-name {
   color: #1d7732 !important; /* Light green color */
   font-weight: bold;
 }
 
 /* General table styling */
+/* Sets width, margin, font size, and removes borders between cells */
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -53,6 +60,8 @@
   border-collapse: collapse; /* Remove borders between cells */
 }
 
+/* Table header and cell styling */
+/* Centers text horizontally and vertically, with consistent padding and bold font */
 .table th,
 .table td {
   text-align: center; /* Center text horizontally */
@@ -63,29 +72,41 @@
   font-weight: bold; /* Make text bolder */
 }
 
+/* Additional styling for table headers */
+/* Sets vertical alignment and border for table headers */
 .table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
 }
 
+/* Styling for table body */
+/* Adds top border between table bodies */
 .table tbody + tbody {
   border-top: 2px solid #dee2e6;
 }
 
+/* Styling for bordered table */
+/* Sets bottom border for the entire table */
 .table-bordered {
   border-bottom: 1px solid #dee2e6;
 }
 
+/* Styling for bordered table headers and cells */
+/* Removes borders between cells */
 .table-bordered th,
 .table-bordered td {
   border: none; /* Remove borders between cells */
 }
 
+/* Styling for bordered table headers */
+/* Sets bottom border width */
 .table-bordered thead th,
 .table-bordered thead td {
   border-bottom-width: 2px;
 }
 
+/* Margin utilities */
+/* Adds margin to the top and bottom */
 .mt-5 {
   margin-top: 3rem;
 }
@@ -94,7 +115,8 @@
   margin-bottom: 1.5rem;
 }
 
-/* New style for Past Sessions title */
+/* Styling for card titles */
+/* Sets font family, size, weight, and color for card titles */
 .card-title {
   font-family: "Arial", sans-serif; /* Example font family */
   font-size: 1rem; /* Example font size */
@@ -102,6 +124,8 @@
   color: #1d7423; /* Example color */
 }
 
+/* Styling for secondary card titles */
+/* Sets font family, size, weight, and color */
 .second-card-sessions {
   font-family: "Arial", sans-serif;
   font-size: 1rem;
@@ -110,26 +134,30 @@
   color: #000a01;
 }
 
-/* Center the "Past Sessions" title container */
+/* Centering containers */
+/* Centers the containers for past sessions title and sessions list */
 .top-cont-sessions {
   width: 75%;
   margin: auto;
   margin-bottom: 0;
 }
 
-/* Center the container with the list of sessions */
 .bottom-cont-sessions {
   width: 75%;
   margin: auto;
   margin-top: 0;
 }
 
+/* Styling for header row */
+/* Removes borders and enables vertical scrolling */
 .header-row {
   border: 0;
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
+/* Styling for header row cells */
+/* Removes borders and sets font properties */
 .header-row th {
   border: 0;
   color: lightgrey;
@@ -137,15 +165,20 @@
   font-size: 10px;
 }
 
+/* Styling for bordered table */
+/* Removes top border */
 .table .table-bordered {
   border-top: 0;
 }
 
+/* Styling for links */
+/* Sets text color */
 .text-decoration-none {
   color: darkgreen;
 }
 
-/* Footer */
+/* Footer styling */
+/* Sets background color, top border, padding, height, and positioning */
 .footer {
   background-color: #f8f9fa !important; /* Light grey background */
   border-top: 1px solid #dee2e6 !important;
@@ -159,6 +192,8 @@
   width: 100%;
 }
 
+/* Styling for footer container */
+/* Sets display, alignment, and padding */
 .footer .container {
   display: flex;
   justify-content: space-between;
@@ -167,6 +202,8 @@
   padding: 0 2rem;
 }
 
+/* Styling for footer text and links */
+/* Sets text color and font size */
 .footer .text-muted {
   color: #6c757d !important;
   font-size: 10px !important;
@@ -181,7 +218,8 @@
   text-decoration: underline; /* Add underline on hover */
 }
 
-/* Active link styling */
+/* Styling for active link */
+/* Sets font weight, color, and underline effect */
 .past-sessions-title .active {
   font-weight: bold; /* Make text bold */
   color: #1d7423 !important; /* Example color */
@@ -190,6 +228,7 @@
 }
 
 /* Styling for muscle group badges */
+/* Sets display, background color, text color, border, padding, and margin */
 .muscle-group-badge {
   display: inline-block;
   background-color: #e6f7ff; /* Very light blue background color */
@@ -205,23 +244,31 @@
   vertical-align: middle; /* Center align vertically */
 }
 
+/* Styling for muscle groups container */
+/* Sets display, wrapping, and alignment */
 .muscle-groups {
   display: flex;
   flex-wrap: wrap;
   justify-content: left; /* Left-align muscle group badges */
 }
 
+/* Styling for edit button */
+/* Sets cursor and margin */
 .edit-button {
   cursor: pointer;
   margin-left: 0.5rem;
 }
 
+/* Styling for scrollable container */
+/* Sets maximum height and enables vertical scrolling */
 .scrollable-container {
   max-height: 70vh; /* Adjust the height as needed */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Disable horizontal scrolling */
 }
 
+/* Styling for sticky title */
+/* Sets positioning, background color, z-index, and padding */
 .sticky-title {
   position: sticky;
   top: 0;
@@ -231,6 +278,8 @@
   padding-bottom: 1rem;
 }
 
+/* Styling for sticky header */
+/* Sets positioning, top offset, background color, and z-index */
 .sticky-header th {
   position: sticky;
   top: 3rem; /* Adjust based on the height of the title */
@@ -238,13 +287,16 @@
   z-index: 1000; /* Ensure it stays above other content */
 }
 
-/* Styling for muscle groups and edit button */
+/* Styling for muscle groups container */
+/* Sets display, wrapping, and relative positioning */
 .muscle-groups {
   display: flex;
   flex-wrap: wrap;
   position: relative;
 }
 
+/* Styling for edit button */
+/* Sets absolute positioning, cursor, and margin */
 .edit-button {
   position: absolute;
   right: 0;
@@ -254,6 +306,8 @@
   margin-left: 0.5rem;
 }
 
+/* Styling for table headers and cells */
+/* Sets relative positioning, vertical alignment, text alignment, padding, and margin */
 .table th,
 .table td {
   position: relative; /* Ensure the edit button positions relative to the cell */
@@ -265,13 +319,15 @@
   font-weight: bold; /* Make text bolder */
 }
 
-/* Remove borders and padding to integrate the edit button */
+/* Additional styling for muscle groups cells */
+/* Adjusts padding and removes border */
 .table td.muscle-groups {
   padding-right: 40px; /* Adjust space for the edit button */
   border: none;
 }
 
-/* Ensure the header row remains sticky and above other rows */
+/* Additional styling for sticky header */
+/* Sets positioning, top offset, background color, and z-index */
 .sticky-header th {
   position: sticky;
   top: 3rem; /* Adjust based on the height of the title */
@@ -279,16 +335,22 @@
   z-index: 1000; /* Ensure it stays above other content */
 }
 
+/* Styling for navbar */
+/* Sets margins */
 .navbar {
   margin-bottom: 20px; /* Space below the navbar */
   margin-left: 130px;
   margin-top: -30px;
 }
 
+/* Styling for navbar links */
+/* Sets text color */
 .nav-link {
   color: #000; /* Change color of nav links */
 }
 
+/* Additional styling for navbar links */
+/* Sets hover color */
 .nav-link:hover {
   color: #0056b3; /* Hover color of nav links */
 }
