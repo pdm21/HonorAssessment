@@ -182,3 +182,7 @@ html {
 .sign-up-text a:hover {
   text-decoration: underline;
 }
+
+.forgot-password {
+  font-weight: bolder;
+}
