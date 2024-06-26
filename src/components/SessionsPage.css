@@ -222,3 +222,39 @@
   background-color: white;
   z-index: 1000; /* Ensure it stays above other content */
 }
+
+/* Styling for muscle groups and edit button */
+.muscle-groups {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.edit-button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.table th,
+.table td {
+  position: relative; /* Ensure the edit button positions relative to the cell */
+  vertical-align: middle;
+}
+
+/* Remove borders and padding to integrate the edit button */
+.table td.muscle-groups {
+  padding-right: 40px; /* Adjust space for the edit button */
+  border: none;
+}
+
+/* Ensure the header row remains sticky and above other rows */
+.sticky-header th {
+  position: sticky;
+  top: 3rem; /* Adjust based on the height of the title */
+  background-color: white;
+  z-index: 1000; /* Ensure it stays above other content */
+}

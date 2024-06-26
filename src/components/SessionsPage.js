@@ -146,7 +146,6 @@ const SessionsPage = () => {
                       <th>Session Type</th>
                       <th>Status</th>
                       <th>Muscle</th>
-                      <th>Edit</th> {/* New column for edit button */}
                     </tr>
                   </thead>
                   <tbody>
@@ -166,21 +165,17 @@ const SessionsPage = () => {
                             {session.status}
                           </span>
                         </td>
-                        <td>
-                          <div className="muscle-groups">
-                            {session.muscleGroups
-                              ? session.muscleGroups.map((muscle) => (
-                                  <span
-                                    key={muscle.title}
-                                    className="muscle-group-badge"
-                                  >
-                                    {muscle.title}
-                                  </span>
-                                ))
-                              : "N/A"}
-                          </div>
-                        </td>
-                        <td>
+                        <td className="muscle-groups">
+                          {session.muscleGroups
+                            ? session.muscleGroups.map((muscle) => (
+                                <span
+                                  key={muscle.title}
+                                  className="muscle-group-badge"
+                                >
+                                  {muscle.title}
+                                </span>
+                              ))
+                            : "N/A"}
                           <span
                             className="edit-button"
                             onClick={() =>
