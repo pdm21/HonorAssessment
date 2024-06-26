@@ -180,15 +180,22 @@
 }
 
 /* Styling for muscle group badges */
+
+/* Styling for muscle group badges */
+/* Styling for muscle group badges */
 .muscle-group-badge {
   display: inline-block;
-  background-color: #e9f5ec;
-  color: #1d7732;
-  border: 1px solid #1d7732;
-  border-radius: 0.375rem;
-  padding: 0.2em 0.4em;
-  margin-right: 0.2em;
-  font-size: 0.75em;
+  background-color: #e6f7ff; /* Very light blue background color */
+  color: #1d7732; /* Dark green text color */
+  border: 1px solid #e6f7ff; /* Border matching the background color */
+  border-radius: 12px; /* Rounded corners */
+  padding: 0.25em 0.5em; /* Adjusted padding */
+  margin: 0.2em 0.1em; /* Consistent spacing between badges */
+  font-size: 0.75em; /* Adjust font size if necessary */
+  font-weight: bolder; /* Slightly bolder font weight */
+  text-align: center; /* Center text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  vertical-align: middle; /* Center align vertically */
 }
 
 .muscle-groups {
@@ -257,4 +264,18 @@
   top: 3rem; /* Adjust based on the height of the title */
   background-color: white;
   z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar {
+  margin-bottom: 20px; /* Space below the navbar */
+  margin-left: 130px;
+  margin-top: -30px;
+}
+
+.nav-link {
+  color: #000; /* Change color of nav links */
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Hover color of nav links */
 }
