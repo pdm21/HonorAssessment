@@ -218,7 +218,7 @@
 
 .sticky-header th {
   position: sticky;
-  top: 4rem; /* Adjust based on the height of the title */
+  top: 3rem; /* Adjust based on the height of the title */
   background-color: white;
   z-index: 1000; /* Ensure it stays above other content */
 }
